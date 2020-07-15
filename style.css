@@ -7,7 +7,12 @@
 }
 
 .square {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	width: 33%;
 	height: 33%;
+	font-size: 2em;
 	border: 1px solid black;
 }
