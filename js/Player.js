@@ -1,7 +1,7 @@
 const PlayerFactory = () => {
 	let isTheirTurn = false;
-	let squaresMarked = [];
-	return { isTheirTurn, squaresMarked };
+	let markedSquares = [];
+	return { isTheirTurn, markedSquares };
 };
 
 export { PlayerFactory };
