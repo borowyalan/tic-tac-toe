@@ -1,7 +1,7 @@
-const PlayerFactory = () => {
+const PlayerFactory = (id) => {
 	let isTheirTurn = false;
-	let markedSquares = [];
-	return { isTheirTurn, markedSquares };
+	let squares = [];
+	return { isTheirTurn, squares, id };
 };
 
 export { PlayerFactory };

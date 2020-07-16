@@ -1,13 +1,14 @@
 import { drawBoard, markSquare } from "./GameBoard.js";
 import { PlayerFactory as Player } from "./Player.js";
+import { winningCombinations } from "./winningCombinations.js";
 
 let player1, player2;
 let currentPlayer;
 
 const init = () => {
-	player1 = Player();
+	player1 = Player(1);
 	player1.marker = "X";
-	player2 = Player();
+	player2 = Player(2);
 	player2.marker = "O";
 
 	currentPlayer = decideWhoStarts();
@@ -20,13 +21,37 @@ function decideWhoStarts() {
 }
 
 function handleSquareClick(squareId) {
-	let allMarkedSquares = player1.markedSquares.concat(player2.markedSquares);
+	let allMarkedSquares = player1.squares.concat(player2.squares);
 	if (!allMarkedSquares.includes(squareId)) {
 		markSquare(squareId, currentPlayer.marker);
-		currentPlayer.markedSquares = currentPlayer.markedSquares.concat(squareId);
-		currentPlayer = currentPlayer === player1 ? player2 : player1;
+		currentPlayer.squares = currentPlayer.squares.concat(squareId);
 	} else {
-		console.log("zajete");
+		console.log("This square is already taken!");
+	}
+
+	checkForWinnerOrDraw();
+	currentPlayer = currentPlayer === player1 ? player2 : player1;
+}
+
+function checkForWinnerOrDraw() {
+	for (let combination of winningCombinations) {
+		let isWinner = true;
+		for (let square of combination) {
+			if (!currentPlayer.squares.includes(square)) {
+				isWinner = false;
+				break;
+			}
+		}
+
+		if (isWinner) {
+			console.log(`Player ${currentPlayer.id} won!`);
+			init();
+		}
+	}
+
+	if (player1.squares.concat(player2.squares).length === 9) {
+		console.log("It's a draw!");
+		init();
 	}
 }
 
