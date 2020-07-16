@@ -1,7 +1,7 @@
 import { drawBoard, markSquare } from "./GameBoard.js";
 import { PlayerFactory as Player } from "./Player.js";
 import { winningCombinations } from "./winningCombinations.js";
-import { renderScore, renderResult } from "./Header.js";
+import { renderScore, renderResult, changeTurnIndicator } from "./Header.js";
 
 let player1, player2;
 let currentPlayer;
@@ -13,6 +13,9 @@ function init() {
 	player2.marker = "O";
 
 	currentPlayer = decideWhoStarts();
+	document.getElementById(`player${currentPlayer.id}`).style.backgroundColor =
+		"lightblue";
+
 	drawBoard();
 	console.log("game initialized!");
 }
@@ -29,17 +32,18 @@ function decideWhoStarts() {
 }
 
 function handleSquareClick(squareId) {
+	renderResult("reset");
+	document.getElementById("result").innerHTML = "";
 	let allMarkedSquares = player1.squares.concat(player2.squares);
 	if (!allMarkedSquares.includes(squareId)) {
 		markSquare(squareId, currentPlayer.marker);
 		currentPlayer.squares = currentPlayer.squares.concat(squareId);
+		checkForWinnerOrDraw();
+		currentPlayer = currentPlayer === player1 ? player2 : player1;
+		changeTurnIndicator(currentPlayer);
 	} else {
 		console.log("This square is already taken!");
 	}
-
-	document.getElementById("result").innerHTML = "";
-	checkForWinnerOrDraw();
-	currentPlayer = currentPlayer === player1 ? player2 : player1;
 }
 
 function checkForWinnerOrDraw() {

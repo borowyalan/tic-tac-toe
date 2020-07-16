@@ -5,11 +5,26 @@ function renderScore(winner) {
 }
 function renderResult(result, winner) {
 	let resultElement = document.getElementById("result");
-	if (result === "win") {
-		resultElement.innerHTML = `Player ${winner.id} has won the round!`;
-	} else {
-		resultElement.innerHTML = `This time it was a draw...`;
+	switch (result) {
+		case "win":
+			resultElement.innerHTML = `Player ${winner.id} has won the round!`;
+
+		case "draw":
+			resultElement.innerHTML = `This time it was a draw...`;
+
+		case "reset":
+			resultElement.innerHTML = "";
 	}
 }
 
-export { renderScore, renderResult };
+function changeTurnIndicator(currentPlayer) {
+	let playersContainers = document.getElementsByClassName("playerContainer");
+	for (let playersContainer of playersContainers) {
+		playersContainer.style.backgroundColor = "white";
+	}
+	document.getElementById(`player${currentPlayer.id}`).style.backgroundColor =
+		"lightblue";
+	return currentPlayer;
+}
+
+export { renderScore, renderResult, changeTurnIndicator };
