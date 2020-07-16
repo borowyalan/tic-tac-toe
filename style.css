@@ -78,10 +78,6 @@ body {
 }
 
 @media (min-width: 480px) {
-	body {
-		background-color: red;
-	}
-
 	#board {
 		height: 70vw;
 		width: 70vw;
@@ -93,10 +89,6 @@ body {
 }
 
 @media (min-width: 700px) {
-	body {
-		background-color: green;
-	}
-
 	#board {
 		height: 50vw;
 		width: 50vw;
