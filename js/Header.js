@@ -1,8 +1,6 @@
 function renderScore(winner) {
 	let scoreElement;
-	winner.id === 1
-		? (scoreElement = document.getElementById("playerOne"))
-		: (scoreElement = document.getElementById("playerTwo"));
+	scoreElement = document.getElementById(`player${winner.id}`);
 	scoreElement.getElementsByClassName("score")[0].innerHTML = winner.points;
 }
 function renderResult(result, winner) {
