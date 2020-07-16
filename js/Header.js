@@ -8,12 +8,17 @@ function renderResult(result, winner) {
 	switch (result) {
 		case "win":
 			resultElement.innerHTML = `Player ${winner.id} has won the round!`;
-
+			break;
 		case "draw":
 			resultElement.innerHTML = `This time it was a draw...`;
+			break;
 
+		case "gameStarted":
+			resultElement.innerHTML = `Good luck!`;
+			break;
 		case "reset":
 			resultElement.innerHTML = "";
+			break;
 	}
 }
 

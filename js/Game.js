@@ -18,7 +18,7 @@ function init() {
 	changeTurnIndicator(currentPlayer);
 
 	drawBoard();
-	console.log("game initialized!");
+	renderResult('gameStarted')
 }
 
 function reset() {
