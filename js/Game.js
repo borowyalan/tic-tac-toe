@@ -37,6 +37,7 @@ function handleSquareClick(squareId) {
 		console.log("This square is already taken!");
 	}
 
+	document.getElementById("result").innerHTML = "";
 	checkForWinnerOrDraw();
 	currentPlayer = currentPlayer === player1 ? player2 : player1;
 }

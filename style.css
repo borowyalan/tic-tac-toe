@@ -27,6 +27,10 @@ body {
 	padding: 1em;
 }
 
+#result {
+	height: 5vh;
+}
+
 #board {
 	display: flex;
 	flex-wrap: wrap;
