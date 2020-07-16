@@ -1,9 +1,38 @@
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+
+	height: 100vh;
+	overflow-y: hidden;
+}
+
+.header {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+
+	height: 10vh;
+	width: 80vw;
+}
+
+.playerContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.playerName {
+	padding: 1em;
+}
+
 #board {
 	display: flex;
 	flex-wrap: wrap;
-	height: 605px;
-	width: 605px;
-	/* border: 3px black solid; */
+
+	height: 80vw;
+	width: 80vw;
 }
 
 .square {
@@ -11,8 +40,11 @@
 	justify-content: center;
 	align-items: center;
 
-	width: 33%;
-	height: 33%;
-	font-size: 2em;
+	height: 33.3%;
+	width: 33.3%;
+
 	border: 1px solid black;
+	box-sizing: border-box;
+
+	font-size: 2em;
 }
