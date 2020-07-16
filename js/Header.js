@@ -7,7 +7,7 @@ function renderResult(result, winner) {
 	let resultElement = document.getElementById("result");
 	switch (result) {
 		case "win":
-			resultElement.innerHTML = `Player ${winner.id} has won the round!`;
+			resultElement.innerHTML = `Player ${winner.id} won the round!`;
 			break;
 		case "draw":
 			resultElement.innerHTML = `This time it was a draw...`;
