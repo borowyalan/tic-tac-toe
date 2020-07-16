@@ -25,7 +25,7 @@ function renderResult(result, winner) {
 function changeTurnIndicator(currentPlayer) {
 	let playersContainers = document.getElementsByClassName("playerContainer");
 	for (let playersContainer of playersContainers) {
-		playersContainer.style.borderColor = "white";
+		playersContainer.style.borderColor = "transparent";
 	}
 	document.getElementById(`player${currentPlayer.id}`).style.borderColor =
 		"lightblue";
