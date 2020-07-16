@@ -13,8 +13,9 @@ function init() {
 	player2.marker = "O";
 
 	currentPlayer = decideWhoStarts();
-	document.getElementById(`player${currentPlayer.id}`).style.backgroundColor =
-		"lightblue";
+	// document.getElementById(`player${currentPlayer.id}`).style.backgroundColor =
+	// 	"lightblue";
+	changeTurnIndicator(currentPlayer);
 
 	drawBoard();
 	console.log("game initialized!");

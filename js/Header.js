@@ -20,9 +20,9 @@ function renderResult(result, winner) {
 function changeTurnIndicator(currentPlayer) {
 	let playersContainers = document.getElementsByClassName("playerContainer");
 	for (let playersContainer of playersContainers) {
-		playersContainer.style.backgroundColor = "white";
+		playersContainer.style.borderColor = "white";
 	}
-	document.getElementById(`player${currentPlayer.id}`).style.backgroundColor =
+	document.getElementById(`player${currentPlayer.id}`).style.borderColor =
 		"lightblue";
 	return currentPlayer;
 }
