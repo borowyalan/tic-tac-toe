@@ -5,6 +5,8 @@ body {
 	height: 100vh;
 	overflow-y: hidden;
 
+	margin: 0;
+
 	font-family: "Rowdies", cursive;
 }
 
@@ -19,11 +21,16 @@ body {
 
 .header {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
 
-	height: 10vh;
+	height: 25vh;
 	width: 80vw;
+}
+
+.playersRow {
+	display: flex;
 }
 
 .playerContainer {
@@ -52,6 +59,8 @@ body {
 
 	height: 80vw;
 	width: 80vw;
+
+	margin-bottom: 1.5em;
 }
 
 .square {
@@ -66,4 +75,53 @@ body {
 	box-sizing: border-box;
 
 	font-size: 2em;
+}
+
+@media (min-width: 480px) {
+	body {
+		background-color: red;
+	}
+
+	#board {
+		height: 70vw;
+		width: 70vw;
+	}
+
+	#result {
+		padding: 2em;
+	}
+}
+
+@media (min-width: 700px) {
+	body {
+		background-color: green;
+	}
+
+	#board {
+		height: 50vw;
+		width: 50vw;
+	}
+}
+
+@media (min-width: 900px) {
+	.gameContainer {
+		flex-direction: row;
+		justify-content: space-evenly;
+		width: 100%;
+	}
+
+	.header {
+		flex-direction: column;
+		max-width: 30vw;
+		height: 60vh;
+	}
+
+	.playersRow {
+		width: 100%;
+	}
+
+	#board {
+		height: 40vw;
+		width: 40vw;
+	}
 }
