@@ -1,7 +1,8 @@
 const PlayerFactory = (id) => {
 	let isTheirTurn = false;
 	let squares = [];
-	return { isTheirTurn, squares, id };
+	let points = 0;
+	return { isTheirTurn, squares, id, points };
 };
 
 export { PlayerFactory };
