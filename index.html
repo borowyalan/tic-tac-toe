@@ -4,21 +4,27 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400&display=swap"
+			rel="stylesheet"
+		/>
 		<title>Tic Tac Toe</title>
 	</head>
 	<body>
-		<div class="header">
-			<div id="player1" class="playerContainer">
-				<div class="playerName">Player 1: X</div>
-				<div class="score">0</div>
+		<div class="gameContainer">
+			<div class="header">
+				<div id="player1" class="playerContainer">
+					<div class="playerName">Player X</div>
+					<div class="score">0</div>
+				</div>
+				<div id="player2" class="playerContainer">
+					<div class="playerName">Player O</div>
+					<div class="score">0</div>
+				</div>
 			</div>
-			<div id="player2" class="playerContainer">
-				<div class="playerName">Player 2: O</div>
-				<div class="score">0</div>
-			</div>
+			<div id="result"></div>
+			<div id="board"></div>
 		</div>
-		<div id="result"></div>
-		<div id="board"></div>
 	</body>
 	<script type="module" src="./js/index.js"></script>
 </html>

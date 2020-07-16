@@ -1,11 +1,20 @@
 body {
 	display: flex;
+	justify-content: center;
+
+	height: 100vh;
+	overflow-y: hidden;
+
+	font-family: "Rowdies", cursive;
+}
+
+.gameContainer {
+	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
 
-	height: 100vh;
-	overflow-y: hidden;
+	margin-top: 3em;
 }
 
 .header {
@@ -25,7 +34,9 @@ body {
 
 	height: 10vh;
 	width: 35vw;
-	padding-bottom: 0.5em;
+	font-size: 1.3em;
+
+	padding-bottom: 0.3em;
 
 	border-bottom: 6px solid lightblue;
 	border-radius: 3px;
@@ -48,10 +59,10 @@ body {
 	justify-content: center;
 	align-items: center;
 
-	height: 33.3%;
-	width: 33.3%;
+	height: calc(100% / 3);
+	width: calc(100% / 3);
 
-	border: 1px solid black;
+	border: 2px groove lightskyblue;
 	box-sizing: border-box;
 
 	font-size: 2em;
