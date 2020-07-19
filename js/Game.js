@@ -2,6 +2,7 @@ import { drawBoard, markSquare } from "./GameBoard.js";
 import { PlayerFactory as Player } from "./Player.js";
 import { winningCombinations } from "./winningCombinations.js";
 import { renderScore, renderResult, changeTurnIndicator } from "./Header.js";
+import "./socket.js";
 
 let player1, player2;
 let currentPlayer;
@@ -13,12 +14,10 @@ function init() {
 	player2.marker = "O";
 
 	currentPlayer = decideWhoStarts();
-	// document.getElementById(`player${currentPlayer.id}`).style.backgroundColor =
-	// 	"lightblue";
 	changeTurnIndicator(currentPlayer);
 
 	drawBoard();
-	renderResult('gameStarted')
+	renderResult("gameStarted");
 }
 
 function reset() {
