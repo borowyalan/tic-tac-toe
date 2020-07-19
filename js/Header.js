@@ -3,7 +3,7 @@ function renderScore(winner) {
 	scoreElement = document.getElementById(`player${winner.id}`);
 	scoreElement.getElementsByClassName("score")[0].innerHTML = winner.points;
 }
-function renderResult(result, winner) {
+function renderResult(result, winner, myMarker) {
 	let resultElement = document.getElementById("result");
 	switch (result) {
 		case "win":
@@ -12,9 +12,8 @@ function renderResult(result, winner) {
 		case "draw":
 			resultElement.innerHTML = `This time it was a draw...`;
 			break;
-
 		case "gameStarted":
-			resultElement.innerHTML = `Good luck!`;
+			resultElement.innerHTML = `Good luck! You are: ${myMarker}`;
 			break;
 		case "reset":
 			resultElement.innerHTML = "";

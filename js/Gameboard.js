@@ -1,4 +1,4 @@
-import { handleSquareClick } from "./Game.js";
+import { handleSquareClick } from "./index.js";
 
 function markSquare(squareId, marker) {
 	let squareToMark = document.getElementById(squareId);
