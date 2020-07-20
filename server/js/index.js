@@ -8,7 +8,10 @@ import { fileURLToPath } from "url";
 const app = express();
 const http = httpImport.createServer(app);
 const io = ioImport(http);
-const PORT = 3000;
+const port = process.env.PORT;
+if (port == null || port == "") {
+	port = 5000;
+}
 
 const __dirname = path.join(fileURLToPath(import.meta.url), "../../../");
 
@@ -40,8 +43,8 @@ io.on("connection", (socket) => {
 	});
 });
 
-http.listen(PORT, () => {
-	console.log(`App is running on port: ${PORT}`);
+http.listen(port, () => {
+	console.log(`App is running on port: ${port}`);
 });
 
 export { io };
