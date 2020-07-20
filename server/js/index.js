@@ -8,6 +8,7 @@ import { fileURLToPath } from "url";
 const app = express();
 const http = httpImport.createServer(app);
 const io = ioImport(http);
+const PORT = 3000;
 
 const __dirname = path.join(fileURLToPath(import.meta.url), "../../../");
 
@@ -16,8 +17,6 @@ app.get("/", (req, res) => {
 });
 
 app.use(express.static(__dirname));
-
-console.log(__dirname);
 
 io.on("connection", (socket) => {
 	let currentSockets = Object.keys(io.sockets.sockets);
@@ -41,6 +40,8 @@ io.on("connection", (socket) => {
 	});
 });
 
-http.listen(3000, () => {});
+http.listen(PORT, () => {
+	console.log(`App is running on port: ${PORT}`);
+});
 
 export { io };
