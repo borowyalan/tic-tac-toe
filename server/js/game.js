@@ -31,7 +31,7 @@ function handleMove(squareId, socketId) {
 
 		checkForWinnerOrDraw();
 		// change turns
-		currentPlayer = playerMakingMove.id === 1 ? player1 : player2;
+		currentPlayer = playerMakingMove.id === 1 ? player2 : player1;
 		io.emit("changeTurn", currentPlayer);
 	}
 }

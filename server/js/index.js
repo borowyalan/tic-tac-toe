@@ -1,15 +1,23 @@
-import appImport from "express";
+import express from "express";
 import httpImport from "http";
 import ioImport from "socket.io";
-const app = appImport();
+import * as path from "path";
+import { initGame, handleMove } from "./game.js";
+import { fileURLToPath } from "url";
+
+const app = express();
 const http = httpImport.createServer(app);
 const io = ioImport(http);
 
-import { initGame, handleMove } from "./game.js";
+const __dirname = path.join(fileURLToPath(import.meta.url), "../../../");
 
 app.get("/", (req, res) => {
-	res.send("<h1>Hello world</h1>");
+	res.sendFile(__dirname + "/index.html");
 });
+
+app.use(express.static(__dirname));
+
+console.log(__dirname);
 
 io.on("connection", (socket) => {
 	let currentSockets = Object.keys(io.sockets.sockets);
